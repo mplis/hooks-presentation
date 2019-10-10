@@ -1,145 +1,199 @@
+import { Notes } from "mdx-deck";
 import {
   CodeSurfer,
   CodeSurferColumns,
-  Step,
+  Step
 } from "code-surfer";
-import { github, vsDark } from "@code-surfer/themes";
+import {
+  base,
+  dracula,
+  duotoneDark,
+  duotoneLight,
+  github,
+  nightOwl,
+  oceanicNext,
+  shadesOfPurple,
+  ultramin,
+  vsDark
+} from "@code-surfer/themes";
+import { Counter } from "./components/Counter";
+import wrapperHell from "./assets/wrapper-hell.jpeg";
 
-export const theme = vsDark;
+export const theme = nightOwl;
 
-# Hello 👋
+# React Hooks
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+---
+
+- Why
+- What
+- How
+- When
+
+---
+
+# Why Hooks?
+
+---
+
+<ul>
+  <li style={{ margin: 10 }}>JavaScript classes</li>
+  <li style={{ margin: 10 }}>Complex components</li>
+  <li style={{ margin: 10 }}>Reusing logic</li>
+</ul>
+
+---
+
+# JavaScript classes
+
+<Notes>
+
+- JavaScript classes can be confusing
+  - `this` is not intuitive
+- React components are conceptually more similar to functions
+
+</Notes>
+
+---
+
+# Complex components
+
+<Notes>
+
+- Related code gets split between lifecycle hooks
+
+</Notes>
+
+---
+
+# Reusing logic
+
+<Notes>
+
+- Currently done with HOC's (or render props, though those aren't used much in NSP)
+  - Not clear where props are coming from
+  - Adds new component to tree - clutters React DevTools
+  - Prop collisions (though rare) are possible
+
+</Notes>
+
+---
+
+# Higher-Order Components
+
+<Notes>
+
+- HOCs are functions that take in a base component and return an "enhanced" version of that component, often injecting new props into the base component
+- Can be hard to know where props are actually coming from in the base component
+- Because they create new components in the render tree, they can clutter the DevTools, leading to...
+
+</Notes>
+
+---
+
+<img src={wrapperHell} />
+
+---
+
+# What are Hooks?
+
+---
+
+<Counter />
 
 ---
 
 <CodeSurfer>
 
-```js title="This is a title" subtitle="and this a subtitle"
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
+```js file=./code/Counter.class.js
 ```
 
-```js
-function lorem(ipsum, dolor = 1) {
-  const sit = ipsum == null ? 0 : ipsum.sit;
-  dolor = sit - amet(dolor);
-  return sit
-    ? consectetur(ipsum, 0, dolor < 0 ? 0 : dolor)
-    : [];
-}
-
-function adipiscing(...elit) {
-  if (!elit.sit) {
-    return [];
-  }
-
-  const sed = elit[0];
-  return eiusmod.tempor(sed) ? sed : [sed];
-}
-
-function incididunt(ipsum, ut = 1) {
-  ut = labore.et(amet(ut), 0);
-  const sit = ipsum == null ? 0 : ipsum.sit;
-
-  if (!sit || ut < 1) {
-    return [];
-  }
-
-  let dolore = 0;
-  let magna = 0;
-  const aliqua = new eiusmod(labore.ut(sit / ut));
-
-  while (dolore < sit) {
-    aliqua[magna++] = consectetur(
-      ipsum,
-      dolore,
-      (dolore += ut)
-    );
-  }
-
-  return aliqua;
-}
+```js file=./code/Counter.hooks.expanded.js
 ```
 
-```diff 1[10:14],2[15:19],3[22:27],10:12
+```js 2:4 file=./code/Counter.hooks.expanded.js
+```
 
+```js 2 file=./code/Counter.hooks.condensed.js
 ```
 
 </CodeSurfer>
 
+<Notes>
+
+- Here's an example of how you might build this with a
+  class component
+- Before Hooks, you couldn't build this
+  with a function component because function components
+  couldn't have state
+- `useState` is an example of a Hook (there are others)
+- `useState` returns an array with two values (kind of like a tuple)
+  - The first value is the state
+  - The second value is a function that updates the state
+- This will almost always be written using array destructuring
+
+</Notes>
+
 ---
 
-<CodeSurferColumns themes={[vsDark, github]}>
+<CodeSurferColumns sizes={[1,2]}>
 
 <Step>
 
-```js
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```js file=./code/Counter.class.js
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+```js file=./code/Counter.hooks.condensed.js
 ```
 
 </Step>
 
-<Step>
+<Step subtitle="Declare state">
 
-```js
-const lorem = (ipsum, dolor, sit) => {
-  const amet = dolor - ipsum;
-  return consectetur.adipiscing(
-    {
-      elit: sed.eiusmod(sit - dolor) / amet + 2,
-    },
-    (tempor, incididunt) => ipsum + amet * incididunt
-  );
-};
-
-const magna = aliqua => aliqua.ut((enim, ad) => enim, 0);
+```js 5[5:14] file=./code/Counter.class.js
 ```
 
-```js
-const minim = (ad, enim) => dolore.magna(ad / enim);
+```js 2[29:42] file=./code/Counter.hooks.condensed.js
+```
 
-const sed = (eiusmod, tempor, incididunt) => {
-  const ut = tempor - eiusmod;
-  return labore.et(
-    {
-      amet: dolore.magna(incididunt - tempor) / ut + 2,
-    },
-    (aliqua, elit) => eiusmod + ut * elit
-  );
-};
+</Step>
+
+<Step subtitle="Set initial value">
+
+```js 6[14] file=./code/Counter.class.js
+```
+
+```js 2[44] file=./code/Counter.hooks.condensed.js
+```
+
+</Step>
+
+<Step subtitle="Name state">
+
+```js 6[7:11] file=./code/Counter.class.js
+```
+
+```js 2[10:14] file=./code/Counter.hooks.condensed.js
+```
+
+</Step>
+
+<Step subtitle="Update state...">
+
+```js 14[24:36,40:44] file=./code/Counter.class.js
+```
+
+```js 2[17:24],5[28:35] file=./code/Counter.hooks.condensed.js
+```
+
+</Step>
+
+<Step subtitle="...with a new value">
+
+```js 14[47:55] file=./code/Counter.class.js
+```
+
+```js 5[37:45] file=./code/Counter.hooks.condensed.js
 ```
 
 </Step>
@@ -148,5 +202,167 @@ const sed = (eiusmod, tempor, incididunt) => {
 
 ---
 
-docs:  
-[codesurfer.pomb.us](https://codesurfer.pomb.us)
+# useEffect
+
+<div style={{ textAlign: "center" }}>
+  componentDidMount + componentDidUpdate +
+  componentWillUnmount
+</div>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/Counter.class.js
+```
+
+```js file=./code/CounterTitle.class.withUpdate.js
+```
+
+```js file=./code/CounterTitle.class.withMount.js
+```
+
+```js file=./code/CounterTitle.class.js
+```
+
+```js 10:18 file=./code/CounterTitle.class.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/CounterTitle.class.js
+```
+
+```js file=./code/Counter.hooks.condensed.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/CounterTitle.class.js
+```
+
+```js file=./code/CounterTitle.hooks.withoutDeps.js
+```
+
+</Step>
+
+<Step>
+
+```js 10[2:19],14[2:20] file=./code/CounterTitle.class.js
+```
+
+```js 4[2:17] file=./code/CounterTitle.hooks.withoutDeps.js
+```
+
+</Step>
+
+<Step>
+
+```js 11,16 file=./code/CounterTitle.class.js
+```
+
+```js 5 file=./code/CounterTitle.hooks.withoutDeps.js
+```
+
+</Step>
+
+<Step>
+
+```js 15[5:45] file=./code/CounterTitle.class.js
+```
+
+```js 6[4:12] file=./code/CounterTitle.hooks.withDeps.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/CounterTitle.hooks.withoutDeps.js
+```
+
+```js file=./code/CounterTitle.hooks.customHook.js
+```
+
+```js file=./code/CounterTitle.hooks.customHook.js
+```
+
+</CodeSurfer>
+
+---
+
+- `useReducer`
+- `useContext`
+- `useRef`
+- `useCallback`
+
+---
+
+# How do Hooks work?
+
+<Notes>
+
+- Rules of Hooks (rely on call order)
+- Hooks start with "use"
+
+</Notes>
+
+---
+
+<CodeSurfer>
+
+```js 4:9 file=./code/CounterTitle.hooks.breakingRules.js subtitle="Hooks must be called at the top level"
+```
+
+```js 4:8 file=./code/CounterTitle.hooks.fixedRules.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/CounterTitle.hooks.customHook.js
+```
+
+```js 1[7:9],8[35:37],9[3:5] file=./code/CounterTitle.hooks.customHook.js subtitle="Custom Hooks must start with 'use'"
+```
+
+</CodeSurfer>
+
+---
+
+# When should I use Hooks?
+
+---
+
+<h1>
+  <a href="https://confluence.viator.com/display/EN/Using+React+Hooks+in+NSP">
+    Using React Hooks in NSP
+  </a>
+</h1>
+
+---
+
+<ul>
+  <li>
+    <a href="https://reactjs.org/docs/hooks-intro.html">
+      React Docs
+    </a>
+  </li>
+</ul>
+
+---
