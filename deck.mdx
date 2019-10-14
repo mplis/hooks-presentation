@@ -56,6 +56,18 @@ export const theme = nightOwl;
 
 ---
 
+<CodeSurfer>
+
+```js file=./code/ClassComponent.bind.js
+```
+
+```js file=./code/ClassComponent.classProperties.js
+```
+
+</CodeSurfer>
+
+---
+
 # Complex components
 
 <Notes>
@@ -63,6 +75,24 @@ export const theme = nightOwl;
 - Related code gets split between lifecycle hooks
 
 </Notes>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/ComplexComponent.js
+```
+
+```js 7,12 file=./code/ComplexComponent.js
+```
+
+```js 8,16 file=./code/ComplexComponent.js
+```
+
+```js 3,20 file=./code/ComplexComponent.js
+```
+
+</CodeSurfer>
 
 ---
 
@@ -88,6 +118,73 @@ export const theme = nightOwl;
 - Because they create new components in the render tree, they can clutter the DevTools, leading to...
 
 </Notes>
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+```js file=./code/Checkbox.base.js
+```
+
+```js file=./code/Accordion.base.js
+```
+
+</Step>
+
+<Step>
+
+```js 2:6 file=./code/Checkbox.base.js
+```
+
+```js 2:6 file=./code/Accordion.base.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/WithToggle.js
+```
+
+```js 3:7 file=./code/WithToggle.js
+```
+
+```js 13:14 file=./code/WithToggle.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns>
+
+<Step>
+
+```js file=./code/Checkbox.base.js
+```
+
+```js file=./code/Accordion.base.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/Checkbox.withHOC.js
+```
+
+```js file=./code/Accordion.withHOC.js
+```
+
+</Step>
+
+</CodeSurferColumns>
 
 ---
 
