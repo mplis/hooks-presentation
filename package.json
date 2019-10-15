@@ -10,5 +10,8 @@
     "code-surfer": "3.0.0-beta.1",
     "mdx-deck": "3.0.13"
   },
-  "name": "hooks-presentation"
+  "name": "hooks-presentation",
+  "dependencies": {
+    "prettier": "^1.18.2"
+  }
 }

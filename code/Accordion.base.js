@@ -9,7 +9,7 @@ class Accordion extends React.Component {
     return (
       <div>
         <button onClick={this.handleToggle}>
-          {this.state.isOpen ? "Close" : "Open"}
+          {this.state.isOpen ? 'Close' : 'Open'}
         </button>
         {this.state.isOpen ? this.props.children : null}
       </div>

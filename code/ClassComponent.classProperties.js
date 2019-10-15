@@ -6,8 +6,6 @@ class Counter extends React.Component {
   };
 
   render() {
-    return (
-      <button onClick={this.handleClick}>Click me</button>
-    );
+    return <button onClick={this.handleClick}>Click me</button>;
   }
 }

@@ -1,11 +1,11 @@
 class ComplexComponent extends React.Component {
   constructor() {
-    this.state = { value: "" };
+    this.state = { value: '' };
   }
 
   componentDidMount() {
     document.title = `Hello: {this.props.name}`;
-    window.addEventListener("resize", this.handleResize);
+    window.addEventListener('resize', this.handleResize);
   }
 
   componentDidUpdate() {
@@ -13,7 +13,7 @@ class ComplexComponent extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this.handleResize);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   handleChange = newValue => {

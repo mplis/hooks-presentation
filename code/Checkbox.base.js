@@ -8,7 +8,7 @@ class Checkbox extends React.Component {
   render() {
     return (
       <button onClick={this.handleToggle}>
-        {this.state.isChecked ? "✅" : "❎"}
+        {this.state.isChecked ? '✅' : '❎'}
       </button>
     );
   }

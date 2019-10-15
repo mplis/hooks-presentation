@@ -5,9 +5,5 @@ const Counter = props => {
     document.title = `Count: ${count}`;
   });
 
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      {count}
-    </button>
-  );
+  return <button onClick={() => setCount(count + 1)}>{count}</button>;
 };

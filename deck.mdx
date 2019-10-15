@@ -1,9 +1,5 @@
-import { Notes } from "mdx-deck";
-import {
-  CodeSurfer,
-  CodeSurferColumns,
-  Step
-} from "code-surfer";
+import { Notes, Split } from 'mdx-deck';
+import { CodeSurfer, CodeSurferColumns, Step } from 'code-surfer';
 import {
   base,
   dracula,
@@ -15,9 +11,9 @@ import {
   shadesOfPurple,
   ultramin,
   vsDark
-} from "@code-surfer/themes";
-import { Counter } from "./components/Counter";
-import wrapperHell from "./assets/wrapper-hell.jpeg";
+} from '@code-surfer/themes';
+import { Counter } from './components/Counter';
+import wrapperHell from './assets/wrapper-hell.jpeg';
 
 export const theme = nightOwl;
 
@@ -196,7 +192,328 @@ export const theme = nightOwl;
 
 ---
 
-<Counter />
+<CodeSurfer>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.0.js
+```
+
+</Step>
+
+<Step>
+
+```js 6,19 file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.1.js
+```
+
+</Step>
+
+<Step>
+
+```js 8,11:13,19 file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.2.js
+```
+
+</Step>
+
+<Step>
+
+```js
+// Array destructuring
+
+const array = ['Hello', 'world'];
+
+// this...
+const hello = array[0];
+const world = array[1];
+
+// ...is the same as this
+const [hello, world] = array;
+```
+
+```js file=./code/ProductBuilder.hooks.basic.3.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js 2 file=./code/ProductBuilder.hooks.basic.3.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js file=./code/ProductBuilder.class.multipleState.0.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.multipleState.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
+<Step>
+
+```js 7,10,17:19,26:30 file=./code/ProductBuilder.class.multipleState.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.multipleState.0.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/ProductBuilder.class.multipleState.0.js
+```
+
+```js file=./code/ProductBuilder.class.documentTitle.0.js
+```
+
+```js file=./code/ProductBuilder.class.documentTitle.1.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.documentTitle.1.js
+```
+
+```js file=./code/ProductBuilder.hooks.multipleState.0.js
+```
+
+</Step>
+
+<Step>
+
+```js 13:19 file=./code/ProductBuilder.class.documentTitle.1.js
+```
+
+```js file=./code/ProductBuilder.hooks.documentTitle.0.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/ProductBuilder.class.documentTitle.1.js
+```
+
+```js file=./code/ProductBuilder.class.windowWidth.0.js
+```
+
+```js file=./code/ProductBuilder.class.windowWidth.1.js
+```
+
+```js file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.documentTitle.0.js
+```
+
+</Step>
+
+<Step>
+
+```js 8,50 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.0.js
+```
+
+</Step>
+
+<Step>
+
+```js 12,15,17:18,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.1.js
+```
+
+</Step>
+
+<Step>
+
+```js 24:26 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<ul>
+  <li style={{ margin: 10 }}>JavaScript classes</li>
+  <li style={{ margin: 10 }}>Complex components</li>
+  <li style={{ margin: 10 }}>Reusing logic</li>
+</ul>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+<Step>
+
+```js 8,12,15,17:18,24:26,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+<Step>
+
+```js 8,12,15,17:18,24:26,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js 9:16 file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<ul>
+  <li style={{ margin: 10 }}>JavaScript classes</li>
+  <li style={{ margin: 10 }}>Complex components</li>
+  <li style={{ margin: 10 }}>Reusing logic</li>
+</ul>
+
+---
+
+<CodeSurfer>
+
+```js 9:16 file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+```js 1:10 file=./code/ProductBuilder.hooks.customHook.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.customHook.1.js
+```
+
+```js file=./code/ProductBuilder.hooks.customHook.2.js
+```
+
+```js 1:11,16 file=./code/ProductBuilder.hooks.customHook.2.js
+```
+
+</CodeSurfer>
+
+---
+
+# Old
 
 ---
 
@@ -301,9 +618,8 @@ export const theme = nightOwl;
 
 # useEffect
 
-<div style={{ textAlign: "center" }}>
-  componentDidMount + componentDidUpdate +
-  componentWillUnmount
+<div style={{ textAlign: 'center' }}>
+  componentDidMount + componentDidUpdate + componentWillUnmount
 </div>
 
 ---
@@ -456,9 +772,7 @@ export const theme = nightOwl;
 
 <ul>
   <li>
-    <a href="https://reactjs.org/docs/hooks-intro.html">
-      React Docs
-    </a>
+    <a href="https://reactjs.org/docs/hooks-intro.html">React Docs</a>
   </li>
 </ul>
 
