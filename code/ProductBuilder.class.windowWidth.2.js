@@ -1,16 +1,9 @@
 class ProductBuilder extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: '',
-      description: '',
-      width: window.innerWidth
-    };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-    this.handleResize = this.handleResize.bind(this);
-  }
+  state = {
+    name: 'My Tour',
+    description: "It's great!",
+    width: window.innerWidth,
+  };
 
   componentDidMount() {
     document.title = `Building ${this.state.name}`;
@@ -25,23 +18,26 @@ class ProductBuilder extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
 
-  handleResize() {
+  handleResize = () => {
     this.setState({ width: window.innerWidth });
-  }
+  };
 
-  handleNameChange(e) {
+  handleNameChange = e => {
     this.setState({ name: e.target.value });
-  }
+  };
 
-  handleDescriptionChange(e) {
+  handleDescriptionChange = e => {
     this.setState({ description: e.target.value });
-  }
+  };
 
   render() {
     return (
       <div>
         <label>Product Name</label>
-        <input value={this.state.name} onChange={this.handleNameChange} />
+        <input
+          value={this.state.name}
+          onChange={this.handleNameChange}
+        />
         <label>Description</label>
         <input
           value={this.state.description}

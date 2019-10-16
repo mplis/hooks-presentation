@@ -1,4 +1,4 @@
-import { Notes, Split } from 'mdx-deck';
+import { Notes, Split, Image } from 'mdx-deck';
 import { CodeSurfer, CodeSurferColumns, Step } from 'code-surfer';
 import {
   base,
@@ -10,10 +10,9 @@ import {
   oceanicNext,
   shadesOfPurple,
   ultramin,
-  vsDark
+  vsDark,
 } from '@code-surfer/themes';
-import { Counter } from './components/Counter';
-import wrapperHell from './assets/wrapper-hell.jpeg';
+import wrapperHell from './assets/wrapper-hell-NSP.png';
 
 export const theme = nightOwl;
 
@@ -180,11 +179,21 @@ export const theme = nightOwl;
 
 </Step>
 
+<Step>
+
+```js 4[1] file=./code/Checkbox.withHOC.js
+```
+
+```js 4[24:37],5[10:20],7[8:18,21:35] file=./code/Accordion.withHOC.js
+```
+
+</Step>
+
 </CodeSurferColumns>
 
 ---
 
-<img src={wrapperHell} />
+<Image src={wrapperHell} size="contain" />
 
 ---
 
@@ -225,7 +234,7 @@ export const theme = nightOwl;
 
 <Step>
 
-```js 6,19 file=./code/ProductBuilder.class.basic.0.js
+```js 3,15 file=./code/ProductBuilder.class.basic.0.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.basic.1.js
@@ -235,7 +244,7 @@ export const theme = nightOwl;
 
 <Step>
 
-```js 8,11:13,19 file=./code/ProductBuilder.class.basic.0.js
+```js 6:9,16 file=./code/ProductBuilder.class.basic.0.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.basic.2.js
@@ -293,13 +302,43 @@ const [hello, world] = array;
 
 </Step>
 
+<Step subtitle="Create a state value and give it a name">
+
+```js 3[5:8] file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js 2[10:13] file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
+<Step subtitle="Set the initial value">
+
+```js 3[11:19] file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js 2[42:50] file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
+<Step subtitle="Update the state value">
+
+```js 7 file=./code/ProductBuilder.class.basic.0.js
+```
+
+```js 2[16:22],5 file=./code/ProductBuilder.hooks.basic.4.js
+```
+
+</Step>
+
 </CodeSurferColumns>
 
 ---
 
 <CodeSurfer>
 
-```js file=./code/ProductBuilder.class.basic.0.js
+```js file=./code/ProductBuilder.class.basic.0.js title="Adding multiple state values"
 ```
 
 ```js file=./code/ProductBuilder.class.multipleState.0.js
@@ -323,7 +362,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 7,10,17:19,26:30 file=./code/ProductBuilder.class.multipleState.0.js
+```js 4,11:13,23:27 file=./code/ProductBuilder.class.multipleState.0.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.multipleState.0.js
@@ -337,7 +376,7 @@ const [hello, world] = array;
 
 <CodeSurfer>
 
-```js file=./code/ProductBuilder.class.multipleState.0.js
+```js file=./code/ProductBuilder.class.multipleState.0.js title="Performing side effects"
 ```
 
 ```js file=./code/ProductBuilder.class.documentTitle.0.js
@@ -364,7 +403,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 13:19 file=./code/ProductBuilder.class.documentTitle.1.js
+```js 7:13 file=./code/ProductBuilder.class.documentTitle.1.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.documentTitle.0.js
@@ -378,7 +417,7 @@ const [hello, world] = array;
 
 <CodeSurfer>
 
-```js file=./code/ProductBuilder.class.documentTitle.1.js
+```js file=./code/ProductBuilder.class.documentTitle.1.js title="Subscribing and unsubscribing"
 ```
 
 ```js file=./code/ProductBuilder.class.windowWidth.0.js
@@ -408,7 +447,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 8,50 file=./code/ProductBuilder.class.windowWidth.2.js
+```js 5,46 file=./code/ProductBuilder.class.windowWidth.2.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.windowWidth.0.js
@@ -418,7 +457,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 12,15,17:18,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```js 8,10:11,21:23 file=./code/ProductBuilder.class.windowWidth.2.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.windowWidth.1.js
@@ -428,10 +467,61 @@ const [hello, world] = array;
 
 <Step>
 
-```js 24:26 file=./code/ProductBuilder.class.windowWidth.2.js
+```js 17:19 file=./code/ProductBuilder.class.windowWidth.2.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+---
+
+<CodeSurfer>
+
+```js file=./code/ProductBuilder.class.windowWidth.2.js title="Optimizing side effects"
+```
+
+```js 13:15 file=./code/ProductBuilder.class.windowWidth.2.js
+```
+
+```js file=./code/ProductBuilder.class.optimizeEffects.0.js
+```
+
+</CodeSurfer>
+
+---
+
+<CodeSurferColumns sizes={[1,2]}>
+
+<Step>
+
+```js file=./code/ProductBuilder.class.optimizeEffects.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.windowWidth.2.js
+```
+
+</Step>
+
+<Step>
+
+```js 13:17 file=./code/ProductBuilder.class.optimizeEffects.0.js
+```
+
+```js 5:7 file=./code/ProductBuilder.hooks.optimizeEffects.0.js
+```
+
+</Step>
+
+<Step>
+
+```js 14 file=./code/ProductBuilder.class.optimizeEffects.0.js
+```
+
+```js file=./code/ProductBuilder.hooks.optimizeEffects.1.js
 ```
 
 </Step>
@@ -462,7 +552,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 8,12,15,17:18,24:26,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```js 5,8,10:11,17:23 file=./code/ProductBuilder.class.windowWidth.2.js
 ```
 
 ```js file=./code/ProductBuilder.hooks.windowWidth.2.js
@@ -472,7 +562,7 @@ const [hello, world] = array;
 
 <Step>
 
-```js 8,12,15,17:18,24:26,28:30 file=./code/ProductBuilder.class.windowWidth.2.js
+```js 5,8,10:11,17:23 file=./code/ProductBuilder.class.windowWidth.2.js
 ```
 
 ```js 9:16 file=./code/ProductBuilder.hooks.windowWidth.2.js
@@ -513,209 +603,6 @@ const [hello, world] = array;
 
 ---
 
-# Old
-
----
-
-<CodeSurfer>
-
-```js file=./code/Counter.class.js
-```
-
-```js file=./code/Counter.hooks.expanded.js
-```
-
-```js 2:4 file=./code/Counter.hooks.expanded.js
-```
-
-```js 2 file=./code/Counter.hooks.condensed.js
-```
-
-</CodeSurfer>
-
-<Notes>
-
-- Here's an example of how you might build this with a
-  class component
-- Before Hooks, you couldn't build this
-  with a function component because function components
-  couldn't have state
-- `useState` is an example of a Hook (there are others)
-- `useState` returns an array with two values (kind of like a tuple)
-  - The first value is the state
-  - The second value is a function that updates the state
-- This will almost always be written using array destructuring
-
-</Notes>
-
----
-
-<CodeSurferColumns sizes={[1,2]}>
-
-<Step>
-
-```js file=./code/Counter.class.js
-```
-
-```js file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step subtitle="Declare state">
-
-```js 5[5:14] file=./code/Counter.class.js
-```
-
-```js 2[29:42] file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step subtitle="Set initial value">
-
-```js 6[14] file=./code/Counter.class.js
-```
-
-```js 2[44] file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step subtitle="Name state">
-
-```js 6[7:11] file=./code/Counter.class.js
-```
-
-```js 2[10:14] file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step subtitle="Update state...">
-
-```js 14[24:36,40:44] file=./code/Counter.class.js
-```
-
-```js 2[17:24],5[28:35] file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step subtitle="...with a new value">
-
-```js 14[47:55] file=./code/Counter.class.js
-```
-
-```js 5[37:45] file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-</CodeSurferColumns>
-
----
-
-# useEffect
-
-<div style={{ textAlign: 'center' }}>
-  componentDidMount + componentDidUpdate + componentWillUnmount
-</div>
-
----
-
-<CodeSurfer>
-
-```js file=./code/Counter.class.js
-```
-
-```js file=./code/CounterTitle.class.withUpdate.js
-```
-
-```js file=./code/CounterTitle.class.withMount.js
-```
-
-```js file=./code/CounterTitle.class.js
-```
-
-```js 10:18 file=./code/CounterTitle.class.js
-```
-
-</CodeSurfer>
-
----
-
-<CodeSurferColumns sizes={[1,2]}>
-
-<Step>
-
-```js file=./code/CounterTitle.class.js
-```
-
-```js file=./code/Counter.hooks.condensed.js
-```
-
-</Step>
-
-<Step>
-
-```js file=./code/CounterTitle.class.js
-```
-
-```js file=./code/CounterTitle.hooks.withoutDeps.js
-```
-
-</Step>
-
-<Step>
-
-```js 10[2:19],14[2:20] file=./code/CounterTitle.class.js
-```
-
-```js 4[2:17] file=./code/CounterTitle.hooks.withoutDeps.js
-```
-
-</Step>
-
-<Step>
-
-```js 11,16 file=./code/CounterTitle.class.js
-```
-
-```js 5 file=./code/CounterTitle.hooks.withoutDeps.js
-```
-
-</Step>
-
-<Step>
-
-```js 15[5:45] file=./code/CounterTitle.class.js
-```
-
-```js 6[4:12] file=./code/CounterTitle.hooks.withDeps.js
-```
-
-</Step>
-
-</CodeSurferColumns>
-
----
-
-<CodeSurfer>
-
-```js file=./code/CounterTitle.hooks.withoutDeps.js
-```
-
-```js file=./code/CounterTitle.hooks.customHook.js
-```
-
-```js file=./code/CounterTitle.hooks.customHook.js
-```
-
-</CodeSurfer>
-
----
-
 - `useReducer`
 - `useContext`
 - `useRef`
@@ -727,6 +614,7 @@ const [hello, world] = array;
 
 <Notes>
 
+- Can't call Hooks instead class components
 - Rules of Hooks (rely on call order)
 - Hooks start with "use"
 
@@ -734,12 +622,21 @@ const [hello, world] = array;
 
 ---
 
+<h1 style={{ textAlign: 'center' }}>
+Only call Hooks from React functions
+</h1>
+
+- Function components
+- Custom Hooks (like `useWindowWidth`)
+
+---
+
 <CodeSurfer>
 
-```js 4:9 file=./code/CounterTitle.hooks.breakingRules.js subtitle="Hooks must be called at the top level"
+```js 18:23 file=./code/ProductBuilder.hooks.breakingRules.0.js subtitle="Hooks must be called at the top level"
 ```
 
-```js 4:8 file=./code/CounterTitle.hooks.fixedRules.js
+```js file=./code/ProductBuilder.hooks.breakingRules.1.js
 ```
 
 </CodeSurfer>
@@ -748,17 +645,17 @@ const [hello, world] = array;
 
 <CodeSurfer>
 
-```js file=./code/CounterTitle.hooks.customHook.js
+```js 1:11,16 file=./code/ProductBuilder.hooks.customHook.2.js
 ```
 
-```js 1[7:9],8[35:37],9[3:5] file=./code/CounterTitle.hooks.customHook.js subtitle="Custom Hooks must start with 'use'"
+```js 1[7:9],16[17:19] file=./code/ProductBuilder.hooks.customHook.2.js subtitle="Custom Hooks must start with 'use'"
 ```
 
 </CodeSurfer>
 
 ---
 
-# When should I use Hooks?
+# When to use Hooks?
 
 ---
 
@@ -770,10 +667,6 @@ const [hello, world] = array;
 
 ---
 
-<ul>
-  <li>
-    <a href="https://reactjs.org/docs/hooks-intro.html">React Docs</a>
-  </li>
-</ul>
-
----
+<h1>
+  <a href="https://reactjs.org/docs/hooks-intro.html">React Docs</a>
+</h1>

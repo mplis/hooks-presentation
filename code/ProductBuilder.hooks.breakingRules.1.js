@@ -7,14 +7,18 @@ const useWindowWidth = () => {
       window.removeEventListener('resize', handleResize);
     };
   });
+  return width;
 };
 
 const ProductBuilder = props => {
   const [name, setName] = React.useState('My Tour');
   const [description, setDescription] = React.useState("It's great!");
+  const width = useWindowWidth();
 
   React.useEffect(() => {
-    document.title = `Building ${name}`;
+    if (name.length > 5) {
+      document.title = `Building ${name}`;
+    }
   });
 
   const handleNameChange = e => {

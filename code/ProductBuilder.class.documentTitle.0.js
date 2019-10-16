@@ -1,32 +1,29 @@
 class ProductBuilder extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: '',
-      description: ''
-    };
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleDescriptionChange = this.handleDescriptionChange.bind(this);
-  }
+  state = {
+    name: 'My Tour',
+    description: "It's great!",
+  };
 
   componentDidMount() {
     document.title = `Building ${this.state.name}`;
   }
 
-  handleNameChange(e) {
+  handleNameChange = e => {
     this.setState({ name: e.target.value });
-  }
+  };
 
-  handleDescriptionChange(e) {
+  handleDescriptionChange = e => {
     this.setState({ description: e.target.value });
-  }
+  };
 
   render() {
     return (
       <div>
         <label>Product Name</label>
-        <input value={this.state.name} onChange={this.handleNameChange} />
+        <input
+          value={this.state.name}
+          onChange={this.handleNameChange}
+        />
         <label>Description</label>
         <input
           value={this.state.description}

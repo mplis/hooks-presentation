@@ -1,5 +1,5 @@
 const ProductBuilder = props => {
-  const [name, setName] = React.useState('');
+  const [name, setName] = React.useState('My Tour');
 
   const handleNameChange = e => {
     setName(e.target.value);

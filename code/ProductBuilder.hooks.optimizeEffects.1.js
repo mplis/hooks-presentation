@@ -1,4 +1,11 @@
-const useWindowWidth = () => {
+const ProductBuilder = props => {
+  const [name, setName] = React.useState('My Tour');
+  const [description, setDescription] = React.useState("It's great!");
+
+  React.useEffect(() => {
+    document.title = `Building ${name}`;
+  }, [name]);
+
   const [width, setWidth] = React.useState(window.innerWidth);
   React.useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -6,15 +13,6 @@ const useWindowWidth = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
-};
-
-const ProductBuilder = props => {
-  const [name, setName] = React.useState('My Tour');
-  const [description, setDescription] = React.useState("It's great!");
-
-  React.useEffect(() => {
-    document.title = `Building ${name}`;
   });
 
   const handleNameChange = e => {
